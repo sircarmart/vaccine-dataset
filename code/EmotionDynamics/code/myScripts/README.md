@@ -16,15 +16,17 @@ This generates:
 
 ## Step 2: Compute emotion metrics (avgEmoValues)
 
-Run these commands for positive and negative lexicons:
+Run this command to generate positive/negative outputs for every disaster and platform using consistent names:
 
 ```bash
-python code/EmotionDynamics/code/avgEmoValues.py --dataPath code/EmotionDynamics/code/my_data/palisades_reddit_filtered_cleaned.csv --lexPath code/EmotionDynamics/lexicons/NRC_EmoLex_positive.csv --lexNames val --savePath code/EmotionDynamics/code/my_data/output_reddit_positive
-python code/EmotionDynamics/code/avgEmoValues.py --dataPath code/EmotionDynamics/code/my_data/palisades_reddit_filtered_cleaned.csv --lexPath code/EmotionDynamics/lexicons/NRC_EmoLex_negative.csv --lexNames val --savePath code/EmotionDynamics/code/my_data/output_reddit_negative
-
-python code/EmotionDynamics/code/avgEmoValues.py --dataPath code/EmotionDynamics/code/my_data/palisades-fire-bluesky_cleaned.csv --lexPath code/EmotionDynamics/lexicons/NRC_EmoLex_positive.csv --lexNames val --savePath code/EmotionDynamics/code/my_data/output_positive_bluesky
-python code/EmotionDynamics/code/avgEmoValues.py --dataPath code/EmotionDynamics/code/my_data/palisades-fire-bluesky_cleaned.csv --lexPath code/EmotionDynamics/lexicons/NRC_EmoLex_negative.csv --lexNames val --savePath code/EmotionDynamics/code/my_data/output_negative_bluesky
+python code/EmotionDynamics/code/myScripts/run_all_steps.py
 ```
+
+Example output folders created:
+- `code/EmotionDynamics/code/my_data/output_palisades_reddit_positive`
+- `code/EmotionDynamics/code/my_data/output_palisades_reddit_negative`
+- `code/EmotionDynamics/code/my_data/output_texasff_bluesky_positive`
+- `code/EmotionDynamics/code/my_data/output_texasff_bluesky_negative`
 
 ## Step 3: Plot daily emotion-word density
 

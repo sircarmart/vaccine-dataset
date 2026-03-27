@@ -21,7 +21,11 @@ DATASETS = {
     },
 }
 
-EMOTIONS = [
+# Generate these lexicons for each dataset/platform.
+# We keep positive/negative outputs available for the daily pos/neg workflow.
+EMOTIONS_TO_RUN = [
+    ("positive", "lexicons/NRC_EmoLex_positive.csv"),
+    ("negative", "lexicons/NRC_EmoLex_negative.csv"),
     ("fear", "lexicons/NRC_EmoLex_fear.csv"),
     ("trust", "lexicons/NRC_EmoLex_trust.csv"),
     ("sadness", "lexicons/NRC_EmoLex_sadness.csv"),
@@ -30,6 +34,18 @@ EMOTIONS = [
     ("disgust", "lexicons/NRC_EmoLex_disgust.csv"),
     ("joy", "lexicons/NRC_EmoLex_joy.csv"),
     ("surprise", "lexicons/NRC_EmoLex_surprise.csv"),
+]
+
+# Only these emotions are shown in the 8-emotions plot.
+PLOT_EMOTIONS = [
+    "fear",
+    "trust",
+    "sadness",
+    "anticipation",
+    "anger",
+    "disgust",
+    "joy",
+    "surprise",
 ]
 
 OUTPUT_ROOT = BASE / "code/my_data"
@@ -56,7 +72,7 @@ def run_avg_emo_values(data_path, lex_path, save_path):
 def process_for_dataset(dataset_name, platform):
     data_path = DATASETS[dataset_name][platform]
     emotion_outputs = {}
-    for emotion, lex_file in EMOTIONS:
+    for emotion, lex_file in EMOTIONS_TO_RUN:
         lex_path = BASE / lex_file
         out_dir = OUTPUT_ROOT / f"output_{dataset_name}_{platform}_{emotion}"
         run_avg_emo_values(data_path, lex_path, out_dir)
@@ -84,7 +100,11 @@ def load_daily_density(path):
 
 def plot_density(dataset_name, platform, emotion_outputs):
     df = pd.DataFrame()
-    for emotion, p in emotion_outputs.items():
+    for emotion in PLOT_EMOTIONS:
+        p = emotion_outputs.get(emotion)
+        if p is None:
+            print("Missing output path for", emotion)
+            continue
         if not p.exists():
             print("Missing file", p)
             continue
