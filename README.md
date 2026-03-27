@@ -7,14 +7,15 @@ The ```dataset/vaccines_tweet_ids``` folder contains ```.zip``` files with tweet
 If you use any of the tweets data, cite our paper as follows:
 
     @article{gyawali2025shifting,
-        title={The shifting landscape of vaccine discourse: Insights from a decade of pre-to post-COVID-19 vaccine posts on social media},
-        author={Gyawali, Nikesh and Caragea, Doina and Caragea, Cornelia and Mohammad, Saif M},
-        journal={Plos one},
-        volume={20},
-        number={12},
-        pages={e0337911},
-        year={2025},
-        publisher={Public Library of Science San Francisco, CA USA}
+      title        = {The Shifting Landscape of Vaccine Discourse: Insights From a Decade of Pre- to Post-COVID-19 Vaccine Posts on Social Media},
+      author       = {Gyawali, Nikesh and Caragea, Doina and Caragea, Cornelia and Mohammad, Saif M.},
+      journal      = {arXiv preprint arXiv:2511.16832},
+      year         = {2025},
+      archivePrefix= {arXiv},
+      eprint       = {2511.16832},
+      primaryClass = {cs.SI},
+      doi          = {10.48550/arXiv.2511.16832},
+      url          = {https://arxiv.org/abs/2511.16832}
     }
 
 
