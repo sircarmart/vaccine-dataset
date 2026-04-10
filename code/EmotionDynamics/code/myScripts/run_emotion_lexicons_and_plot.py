@@ -8,8 +8,8 @@ BASE = Path("code/EmotionDynamics")
 # Define all datasets with their file paths
 DATASETS = {
     "palisades": {
-        "reddit": BASE / "code/my_data/palisades_reddit_filtered_cleaned.csv",
-        "bluesky": BASE / "code/my_data/palisades-fire-bluesky_cleaned.csv",
+        "reddit": BASE / "code/my_data/palisades_reddit_cleaned.csv",
+        "bluesky": BASE / "code/my_data/palisades_bluesky_cleaned.csv",
     },
     "texasff": {
         "reddit": BASE / "code/my_data/texasff_reddit_cleaned.csv",

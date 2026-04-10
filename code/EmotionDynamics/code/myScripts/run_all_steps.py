@@ -14,8 +14,8 @@ LEX_PATH = Path("code/EmotionDynamics/lexicons")
 DATASETS = [
     {
         "name": "palisades",
-        "reddit": MY_DATA / "palisades_reddit_filtered_cleaned.csv",
-        "bluesky": MY_DATA / "palisades-fire-bluesky_cleaned.csv",
+        "reddit": MY_DATA / "palisades_reddit_cleaned.csv",
+        "bluesky": MY_DATA / "palisades_bluesky_cleaned.csv",
     },
     {
         "name": "texasff",

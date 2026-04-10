@@ -48,7 +48,11 @@ Run this one command to compute all eight EmoLex categories and plot both datase
 python code/EmotionDynamics/code/myScripts/run_emotion_lexicons_and_plot.py
 ```
 
-Output images:
-- `code/EmotionDynamics/code/plottingOutput/daily_emotion_density_reddit_8emotions.png`
-- `code/EmotionDynamics/code/plottingOutput/daily_emotion_density_bluesky_8emotions.png`
+Output images (one per dataset/platform combination):
+- `code/EmotionDynamics/code/plottingOutput/palisades/daily_emotion_density_palisades_reddit_8emotions.png`
+- `code/EmotionDynamics/code/plottingOutput/palisades/daily_emotion_density_palisades_bluesky_8emotions.png`
+- `code/EmotionDynamics/code/plottingOutput/texasff/daily_emotion_density_texasff_reddit_8emotions.png`
+- `code/EmotionDynamics/code/plottingOutput/texasff/daily_emotion_density_texasff_bluesky_8emotions.png`
+- `code/EmotionDynamics/code/plottingOutput/hurricane_milton/daily_emotion_density_hurricane_milton_reddit_8emotions.png`
+- `code/EmotionDynamics/code/plottingOutput/hurricane_milton/daily_emotion_density_hurricane_milton_bluesky_8emotions.png`
 

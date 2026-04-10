@@ -1,10 +1,10 @@
 import pandas as pd
-import re
 from pathlib import Path
+from twokenize import tokenize
 
 INPUTS = [
-    Path("code/EmotionDynamics/code/my_data/palisades_reddit_filtered.csv"),
-    Path("code/EmotionDynamics/code/my_data/palisades-fire-bluesky.csv"),
+    Path("code/EmotionDynamics/code/my_data/palisades_reddit.csv"),
+    Path("code/EmotionDynamics/code/my_data/palisades_bluesky.csv"),
     Path("code/EmotionDynamics/code/my_data/texasff_reddit.csv"),
     Path("code/EmotionDynamics/code/my_data/texasff_bluesky.csv"),
     Path("code/EmotionDynamics/code/my_data/hurricane_milton_reddit.csv"),
@@ -14,13 +14,13 @@ OUT_SUFFIX = "_cleaned.csv"
 
 def clean_text(txt):
     txt = str(txt)
-    tokens = re.findall(r"[A-Za-z']+", txt)
-    toks = " ".join(tokens).lower()
+    tokens = tokenize(txt)
+    # lowercase and filter tokens to only include those with alphabetic characters
+    # filtered_tokens = [t.lower() for t in tokens if any(c.isalpha() for c in t)]
     # keep rows with at least 3 alphabetic tokens
-    alpha_count = sum(1 for t in toks.split() if any(c.isalpha() for c in t))
-    if alpha_count < 3:
+    if len(tokens) < 3:
         return None
-    return toks
+    return " ".join(tokens)
 
 def run():
     for inp in INPUTS:
